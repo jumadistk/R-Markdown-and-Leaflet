@@ -1,0 +1,18 @@
+---
+title: "R Markdown and Leaflet"
+author: "Jumadi"
+date: "August 21, 2019"
+output: html_document
+---
+
+Create a web page using R Markdown that features a map created with Leaflet.
+
+
+```{r pressure, echo=TRUE}
+library(leaflet)
+rand_lng = function(n = 10) rnorm(n, 106.804, .01)
+rand_lat = function(n = 10) rnorm(n, -6.22, .01)
+m = leaflet() %>% addTiles() %>% addMarkers(rand_lng(50), rand_lat(50),popup="Pizza Location")
+m
+
+```
